@@ -1,11 +1,17 @@
 spring:
+ mvc:
+  view:
+   prefix : /templates
+   suffix : .html
+   application :
+    name : dream
  datasource:
   driver-class-name: com.mysql.jdbc.Driver
   url: jdbc:mysql://47.101.52.224:38880/crm?useUnicode=true&characterEncoding=utf-8&useSSL=false
   username: root
   password: root
 server:
-  port: 8080
+  port: 10808
   tomcat:
    max-http-post-size: 512000
 logging:
