@@ -4,32 +4,42 @@ import com.jyc.dream.domain.DownloadVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
 /**
- * @ClassName TestComtroller
+ * @ClassName TestController
  * @Description TODO
- * @Author jyc
- * @Date 2018/10/25 14:54
- * @Version 1.0
+ * @author jyc
+ * @date 2018/10/25 14:54
+ * @version 1.0
  **/
 @Controller
 public class TestController {
 
+    /**
+     * TODO 去测试页面
+     * @return
+     */
     @RequestMapping("/test")
     public String testPage(){
         return "test";
     }
 
+    @RequestMapping({"/index","/","/index.html"})
+    public String index(){
+        return "index";
+    }
 
-    @RequestMapping("/downloadAll")
-    public  String downloadAll(@RequestBody DownloadVo downloadVo, HttpServletResponse response, HttpServletRequest request) {
+
+    @RequestMapping(value = "/downloadAll",method = RequestMethod.POST)
+    public  String downloadAll(@RequestBody DownloadVo downloadVo, HttpServletResponse response) {
 
         File file = new File(downloadVo.getUrl());
-        if(file.exists()){ //判断文件父目录是否存在
+        //判断文件父目录是否存在
+        if(file.exists()){
             response.setContentType("application/force-download");
             response.setHeader("Content-Disposition", "attachment;fileName=" + downloadVo.getName());
             try {
@@ -40,10 +50,11 @@ public class TestController {
 
 
             byte[] buffer = new byte[1024];
-            FileInputStream fis = null; //文件输入流
+            //文件输入流
+            FileInputStream fis = null;
             BufferedInputStream bis = null;
-
-            OutputStream os = null; //输出流
+            //输出流
+            OutputStream os = null;
             try {
                 os = response.getOutputStream();
                 fis = new FileInputStream(file);

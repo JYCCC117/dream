@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @ClassName DownloadVo
- * @Description TODO
+ * @Description TODO 下载实体
  * @Author jyc
  * @Date 2018/10/25 14:57
  * @Version 1.0
