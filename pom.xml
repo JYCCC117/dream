@@ -4,24 +4,30 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jyc</groupId>
-    <artifactId>dream</artifactId>
+    <artifactId>dream-water</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>dream</name>
+    <modules>
+        <module>dream-spring-secruity</module>
+    </modules>
+    <packaging>pom</packaging>
+    <name>dream-water</name>
     <description>Demo project for Spring Boot</description>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR7</spring-cloud.version>
+        <spring-alibaba-cloud.version>2.2.1.RELEASE</spring-alibaba-cloud.version>
+        <spring-platform.version>Cairo-SR8</spring-platform.version>
+        <jackson.modules>2.11.2</jackson.modules>
+        <dubbo-spring-boot.version>2.7.9</dubbo-spring-boot.version>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <hutool.version>5.4.0</hutool.version>
+        <fastjson.version>1.2.75</fastjson.version>
+        <jpush-client.version>3.4.6</jpush-client.version>
+        <okhttp.version>4.8.1</okhttp.version>
     </properties>
 
     <dependencies>
@@ -67,6 +73,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
             </plugin>
 
             <plugin>
