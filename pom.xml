@@ -6,12 +6,13 @@
     <groupId>com.jyc</groupId>
     <artifactId>dream-water</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>dream-spring-secruity</module>
-    </modules>
     <packaging>pom</packaging>
     <name>dream-water</name>
     <description>Demo project for Spring Boot</description>
+
+    <modules>
+        <module>dream-spring-security</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
